@@ -36,16 +36,16 @@ func handler(w http.ResponseWriter, r *http.Request) {
     s := strings.Split(path, ".")
     extension := s[len(s) - 1]
     
-    var data []u8
-    var err Error
+    var data []byte
+    var err error
     if config[extension] != nil {
         command := config[extension].(string)
         command = strings.Replace(command, "$file", path, -1)
         info.Println("Running command:", command)
         splitCommand := strings.Split(command, " ")
-        data, err := exec.Command(splitCommand[0], splitCommand[1:]...).Output()
+        data, err = exec.Command(splitCommand[0], splitCommand[1:]...).Output()
     } else {
-        data, err := ioutil.ReadFile(path)
+        data, err = ioutil.ReadFile(path)
     }
     
     if err != nil {
