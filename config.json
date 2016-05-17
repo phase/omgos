@@ -1,3 +1,4 @@
 {
-    "py": "python $file"
+    "py": "python $file",
+    "epy": "python pygos.py $file"
 }

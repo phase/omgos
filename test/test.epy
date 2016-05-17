@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Embedded Python Test</title>
+    </head>
+    <body>
+        <h1>Embedded Python Test</h1>
+        <p>Python Version:
+<%
+import sys
+print(sys.version,end='')
+%>
+        </p>
+    </body>
+</html>
