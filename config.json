@@ -1,4 +1,6 @@
 {
-    "py": "python $file",
-    "epy": "python pygos.py $file"
+    "blocked": [
+        "config.json",
+        "commands.json"
+    ]
 }

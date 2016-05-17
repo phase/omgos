@@ -2,7 +2,7 @@
 `omgos` is a small HTTP Server used for running commands for certain files
 types.
 
-If your `config.json` contains:
+If your `commands.json` contains:
 
 ```json
 {
@@ -12,6 +12,17 @@ If your `config.json` contains:
 
 Then accessing `server:80/hello.py` will run `python hello.py` and the output
 will be sent to the client.
+
+## config.json
+`omgos` can be configured with a local `config.json`.
+
+* `blocked`: Requests matching any files in the array will return a _403 Forbidden_.
+
+  ```
+  "blocked": ["config.json", "commands.json", "src/(.*)"]
+  ```
+
+  This blocks `config.json`, `commands.json`, and anything in the `src` folder. Full regex is supported.
 
 ## pygos
 Included in this repository is a Python embedder called `pygos`. This will
